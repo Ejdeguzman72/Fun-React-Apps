@@ -34,7 +34,7 @@ export default class ToDoListComponent extends React.Component {
 
     render() {
         return (
-            <div id="hero-about-me-background">
+            <div id="hero-to-do-list-background">
                 <br></br>
                 <Container className="to-do-list-container">
                     <h1 className="center-title">To Do List</h1>

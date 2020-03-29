@@ -21,7 +21,11 @@ export class NavBarComponent extends React.Component {
                                     To Do List
                                 </Link>
                             </Nav.Link>
-                            <Nav.Link href="#pricing">Tip Calculator</Nav.Link>
+                            <Nav.Link href="/tip-calculator">
+                                <Link to="/tip-calculator">
+                                    Tip Calculator
+                                </Link>
+                            </Nav.Link>
                             <Nav.Link href="#pricing">Pokedex</Nav.Link>
                             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

@@ -47,7 +47,7 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
-#hero-about-me-background {
+#hero-to-do-list-background {
   background-image: url('./assets/images.jpg');
   background-size: cover;
   background-position: center center;
@@ -85,4 +85,44 @@
   background-color: #F0F8FF;
   text-overflow: hidden;
   overflow-wrap: break-word;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+#hero-tip-calculator-background {
+  background-image: url('./assets/images.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 150vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  font-family: fantasy;
+}
+
+.tip-calculator-container {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  height: 100vh;
+  background-color: #FFFAF0;
+}
+
+#tip-calculator-center-row {
+  text-align: center;
+  padding: 15px;
+}
+
+.tip-calculator-label {
+  font-size: 25px;
+  font-family: fantasy;
+}
+
+.tip-calculator-radio-button {
+  width: 2em;
+  height: 2em;
 }
