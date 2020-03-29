@@ -1,12 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ToDoListComponent from './component/to-do-list-component';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ToDoListComponent from './component/to-do-list-component/to-do-list-component';
+import { NavBarComponent } from './component/navbar-component/navbar-component';
+import { HashRouter, Switch,  Route } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <ToDoListComponent />
+      <NavBarComponent />
+      <HashRouter>
+        <Switch>
+          <Route path="/to-do-list" exact component={ToDoListComponent} />
+        </Switch>
+      </HashRouter>
     </div>
   );
 }

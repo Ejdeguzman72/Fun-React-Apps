@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+.center-title {
+  text-align: center;
+  font-family: fantasy;
+  padding: 15px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+#hero-about-me-background {
+  background-image: url('./assets/images.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 150vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  font-family: fantasy;
+}
+
+.to-do-list-container {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  height: 100vh;
+  background-color: #FFFAF0;
+  /* display: flex; */
+}
+
+.center-item-list {
+  text-align: center;
+  text-decoration: none;
+}
+
+.to-do-list-item {
+  font-size: 30px;
+  font-family: fantasy;
+  /* list-style: none; */
+  padding: 15px;
+  list-style-position: inside;
+  background-color: #F0F8FF;
+  text-overflow: hidden;
+  overflow-wrap: break-word;
+}
