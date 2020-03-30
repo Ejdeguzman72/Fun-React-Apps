@@ -1,6 +1,6 @@
 import React from 'react';
-import List from './list';
-import { Container } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
+import ListComponent from './list-component';
 
 export default class ToDoListComponent extends React.Component {
     constructor(props)  {
@@ -24,12 +24,11 @@ export default class ToDoListComponent extends React.Component {
         });
     }
 
-    removeItem(name, i) {
-        let item = this.state.items.slice();
-        item.splice(i,1);
-        this.setState({
-            item
-        });
+    removeItem(i) {
+        const items = this.state.items.filter((item, itemIndex) => {
+            return itemIndex !== i
+        })
+        this.setState({ items })
     }
 
     render() {
@@ -40,10 +39,10 @@ export default class ToDoListComponent extends React.Component {
                     <h1 className="center-title">To Do List</h1>
                     <form className="App" onSubmit={this.onSubmit}>
                         <input value={this.state.term}  onChange={this.onChange} />
-                        <button>Submit</button>
+                        <Button variant="secondary" type="submit">Submit</Button>
                         <br></br>
                     </form>   
-                        <List items={this.state.items} removeItem={this.removeItem}/>
+                        <ListComponent items={this.state.items} removeItem={this.removeItem}  />
                 </Container>
             </div>
         )

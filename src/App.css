@@ -37,15 +37,21 @@
   }
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
+/* Basic Features----------------------------------------------------------------------------------------------------------------------- */
 
 .center-title {
   text-align: center;
   font-family: fantasy;
-  padding: 15px;
+  /* padding: 15px; */
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
+/* NavBar Features----------------------------------------------------------------------------------------------------------------------- */
+.navbar-link {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* To Do List Component----------------------------------------------------------------------------------------------------------------------- */
 
 #hero-to-do-list-background {
   background-image: url('./assets/images.jpg');
@@ -79,7 +85,7 @@
 .to-do-list-item {
   font-size: 30px;
   font-family: fantasy;
-  /* list-style: none; */
+  list-style: none;
   padding: 15px;
   list-style-position: inside;
   background-color: #F0F8FF;
@@ -87,7 +93,7 @@
   overflow-wrap: break-word;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
+/* Tip Calculator----------------------------------------------------------------------------------------------------------------------- */
 
 #hero-tip-calculator-background {
   background-image: url('./assets/images.jpg');
@@ -125,4 +131,108 @@
 .tip-calculator-radio-button {
   width: 2em;
   height: 2em;
+}
+
+/* Pokedex----------------------------------------------------------------------------------------------------------------------- */
+
+#hero-pokedex-background {
+  background-image: url('./assets/images.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 150vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  font-family: fantasy;
+}
+
+.pokedex-container {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  height: 100vh;
+  background-color: #FFFAF0;
+}
+
+.pokedex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding-left: 10px;
+  margin: 50px auto;
+  background-color: #FE0065;
+  border-radius: 10px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+.poke-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #BFF9FF;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+  overflow: scroll;
+}
+
+.poke-cell {
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16);
+}
+
+.detail-view {
+  width: 50%;
+  height: 100vh;
+  padding: 10px;
+  background-color: #df095e;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sprite-image {
+  width: 80%;
+  height: 350px;
+  margin: 0 auto;
+  background-color: #585858;
+  border: 15px solid #DEDEDE;
+  border-radius: 5px;
+  color: #585858;
+}
+
+.data-wrapper {
+  width: 80%;
+  height: 350px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #585858;
+  border-radius: 5px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.22);
+  color: #FFF;
+}
+
+.data-name {
+  margin: 0 0 5px;
+}
+
+.data-char {
+  font-size: 30px;
 }

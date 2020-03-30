@@ -17,16 +17,20 @@ export class NavBarComponent extends React.Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="/to-do-list">
-                                <Link to="/to-do-list">
+                                <Link to="/to-do-list" className="navbar-link">
                                     To Do List
                                 </Link>
                             </Nav.Link>
                             <Nav.Link href="/tip-calculator">
-                                <Link to="/tip-calculator">
+                                <Link to="/tip-calculator" className="navbar-link">
                                     Tip Calculator
                                 </Link>
                             </Nav.Link>
-                            <Nav.Link href="#pricing">Pokedex</Nav.Link>
+                            <Nav.Link>
+                                <Link to="pokedex" className="navbar-link">
+                                    Pokedex
+                                </Link>
+                            </Nav.Link>
                             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
