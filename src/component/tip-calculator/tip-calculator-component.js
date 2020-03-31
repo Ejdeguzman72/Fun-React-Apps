@@ -7,11 +7,17 @@ export class TipCalculatorComponent extends React.Component {
         super(props);
         this.state = {
             amount: 0.00,
-            tipPercent: 0.00,
-            tipAmount: 0.15,
-            service: '',
+            tipPercent: 0.15,
+            tipAmount: 0.00,
+            service: 'Satisfactory',
             total: 0.00
         }
+
+        // const serviceLevel = [
+        //     { label: "Below Satisfactory", value: "Below Satisfactory"},
+        //     { label: "Satisfactory", value: "Satisfactory"},
+        //     { label: "Above Satisfactory", value: "Above Satisfactory"}
+        // ]
     }
 
     onAmountChange = (event) => {
@@ -30,15 +36,16 @@ export class TipCalculatorComponent extends React.Component {
 
     handleTipPercentChange =  (event) => {
         this.setState({
-            tipAmount: event.target.value
+            tipPercent: event.target.value
         });
-        console.log(this.state.tipAmount);
+        console.log(this.state.tipPercent);
     }
 
     onSubmit = (event) => {
         event.preventDefault();
         this.setState({
-            total:this.state.amount
+            tipAmount: this.state.amount * this.state.tipPercent,
+            total: this.state.amount + this.state.tipAmount
         })
         console.log(`Amount: ${this.state.amount}`);
         console.log(`Tip Percent: ${this.state.tipPercent}`);
@@ -60,7 +67,7 @@ export class TipCalculatorComponent extends React.Component {
                         <h3 id="tip-calculator-center-row">How was the service?</h3>
                         <select onChange={(event) => this.onServiceChange(event)}>
                             <option value="Above Satisfactory">Above Satisfactory</option>
-                            <option value="Satisfactory">Satisfactory</option>
+                            <option selected value="Satisfactory">Satisfactory</option>
                             <option value="Below Satisfactory">Below Satisfactory</option>
                         </select>
                         <h3 id="tip-calculator-center-row">Choose Tip Amount:</h3>
@@ -70,7 +77,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.15}
-                                checked={this.state.tipAmount == 0.15}
+                                checked={this.state.tipPercent == 0.15}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -83,7 +90,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.20}
-                                checked={this.state.tipAmount == 0.20}
+                                checked={this.state.tipPercent == 0.20}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -96,7 +103,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.22}
-                                checked={this.state.tipAmount == 0.22}
+                                checked={this.state.tipPercent == 0.22}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -105,8 +112,8 @@ export class TipCalculatorComponent extends React.Component {
                         </div>
                         <br></br>
                         <Button variant="secondary" type="submit">Submit:</Button>
-                        <h3 className="center-title">Tip Amount: {this.state.tipAmount}</h3>
-                        <h3 className="center-title">Total Amount:</h3>
+                        <h3 className="center-title">Tip Amount: {this.state.tipAmount} </h3>
+                        <h3 className="center-title">Total Amount: {this.state.total}</h3>
                     </Container>
                 </Form>
             </div>
