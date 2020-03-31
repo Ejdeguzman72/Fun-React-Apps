@@ -7,6 +7,7 @@ const DetailView = ({pokemon}) => {
             <img src={sprite} alt="sprite" className="sprite-image" />
             <div className="data-wrapper">
                 <h1 className="data-name">ID: {id}</h1>
+                <h1 className="data-name">Name: {name}</h1>
                 <p className="data-char">Type: {type}</p>
             </div>
         </section>

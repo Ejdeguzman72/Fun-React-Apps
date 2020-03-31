@@ -21,6 +21,7 @@ export class PokedexComponent extends React.Component {
             const pokemon = new Pokemon(data);
 
             this.setState({ pokemon });
+            alert(`You clicked on ${pokemon.name}!`);
         })
         .catch(err => console.log(err));
         console.log(id);
