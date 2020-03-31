@@ -7,6 +7,7 @@ import { NavBarComponent } from './component/navbar-component/navbar-component';
 import { HashRouter, Switch,  Route } from 'react-router-dom';
 import { TipCalculatorComponent } from './component/tip-calculator/tip-calculator-component';
 import { PokedexComponent } from './component/pokedex-component/pokedex-component';
+import { TicTacToeComponent } from './component/tic-tac-toe-component/tic-tac-toc-component';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/to-do-list" exact component={ToDoComponent} />
           <Route path="/tip-calculator" exact component={TipCalculatorComponent} />
           <Route path="/pokedex" exact component={PokedexComponent}  />
+          <Route path="/tic-tac-toe"  exact component={TicTacToeComponent} />
         </Switch>
       </HashRouter>
     </div>

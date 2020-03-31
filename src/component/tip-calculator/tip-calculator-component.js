@@ -45,7 +45,7 @@ export class TipCalculatorComponent extends React.Component {
         event.preventDefault();
         this.setState({
             tipAmount: this.state.amount * this.state.tipPercent,
-            total: this.state.amount + this.state.tipAmount
+            total: parseInt(this.state.amount) + parseInt(this.state.tipAmount)
         })
         console.log(`Amount: ${this.state.amount}`);
         console.log(`Tip Percent: ${this.state.tipPercent}`);
@@ -55,6 +55,7 @@ export class TipCalculatorComponent extends React.Component {
         
     }
 
+
     render() {
         return (
             <div id="hero-tip-calculator-background">
@@ -62,8 +63,8 @@ export class TipCalculatorComponent extends React.Component {
                 <Form onSubmit={this.onSubmit}>
                     <Container className="tip-calculator-container">
                         <h1 className="center-title">Tip Calculator</h1>
-                        <h3 id="tip-calculator-center-row">Bill Amount:</h3>
-                        <input type="text" onChange={(event) => this.onAmountChange(event)} />
+                        <h3 id="tip-calculator-center-row">Bill Amount:  {this.state.amount}</h3>
+                        <input type="text" onChange={(event) => this.onAmountChange(event)} placeholder="0.00"/>
                         <h3 id="tip-calculator-center-row">How was the service?</h3>
                         <select onChange={(event) => this.onServiceChange(event)}>
                             <option value="Above Satisfactory">Above Satisfactory</option>
@@ -113,7 +114,7 @@ export class TipCalculatorComponent extends React.Component {
                         <br></br>
                         <Button variant="secondary" type="submit">Submit:</Button>
                         <h3 className="center-title">Tip Amount: {this.state.tipAmount} </h3>
-                        <h3 className="center-title">Total Amount: {this.state.total}</h3>
+                        <h3 className="center-title">Total Amount:  {parseInt(this.state.amount) + parseInt(this.state.tipAmount)}</h3>
                     </Container>
                 </Form>
             </div>

@@ -27,8 +27,13 @@ export class NavBarComponent extends React.Component {
                                 </Link>
                             </Nav.Link>
                             <Nav.Link>
-                                <Link to="pokedex" className="navbar-link">
+                                <Link to="/pokedex" className="navbar-link">
                                     Pokedex
+                                </Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link to="/tic-tac-toe" className="navbar-link">
+                                    TicTacToe Game
                                 </Link>
                             </Nav.Link>
                             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
