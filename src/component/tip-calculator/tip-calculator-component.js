@@ -30,8 +30,7 @@ export class TipCalculatorComponent extends React.Component {
 
     handleTipPercentChange =  (event) => {
         this.setState({
-            tipAmount: event.target.value,
-            checked: event.target.value
+            tipAmount: event.target.value
         });
         console.log(this.state.tipAmount);
     }
@@ -71,7 +70,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.15}
-                                checked={this.state.tipAmount === 0.15}
+                                checked={this.state.tipAmount == 0.15}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -84,7 +83,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.20}
-                                checked={this.state.tipAmount === 0.20}
+                                checked={this.state.tipAmount == 0.20}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -97,7 +96,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.22}
-                                checked={this.state.tipAmount === 0.22}
+                                checked={this.state.tipAmount == 0.22}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -106,8 +105,8 @@ export class TipCalculatorComponent extends React.Component {
                         </div>
                         <br></br>
                         <Button variant="secondary" type="submit">Submit:</Button>
-                        <h3 className="center-title">Tip Amount: {this.state.tipAmount * this.state.amount}</h3>
-                        <h3 className="center-title">Total Amount: {this.state.amount + (this.state.tipAmount * this.state.amount)}</h3>
+                        <h3 className="center-title">Tip Amount: {this.state.tipAmount}</h3>
+                        <h3 className="center-title">Total Amount:</h3>
                     </Container>
                 </Form>
             </div>
