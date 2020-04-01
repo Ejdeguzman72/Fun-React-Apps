@@ -308,3 +308,27 @@
 .game-info {
   margin-left: 20px;
 }
+
+/* Attendance Sheet----------------------------------------------------------------------------------------------------------------------- */
+
+#hero-check-in-background {
+  background-image: url('./assets/images.jpg');
+  background-position: center center;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  height: 150vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  font-family: fantasy;
+}
+
+.check-in-container {
+  text-align: center;
+  margin: auto;
+  border-style: solid;
+  border-color: black;
+  height: 100vh;
+  background-color: #FFFAF0;
+}

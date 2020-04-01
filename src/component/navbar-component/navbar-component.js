@@ -36,6 +36,11 @@ export class NavBarComponent extends React.Component {
                                     TicTacToe Game
                                 </Link>
                             </Nav.Link>
+                            <Nav.Link>
+                                <Link to="/check-in" className="navbar-link">
+                                    Attendance Sheet
+                                </Link>
+                            </Nav.Link>
                             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
