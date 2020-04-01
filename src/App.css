@@ -45,6 +45,10 @@
   /* padding: 15px; */
 }
 
+.center-row {
+  margin: 0;
+}
+
 /* NavBar Features----------------------------------------------------------------------------------------------------------------------- */
 .navbar-link {
   color: white;
@@ -212,6 +216,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-wrap: break-word;
 }
 
 .sprite-image {
@@ -233,6 +238,8 @@
   border-radius: 5px;
   box-shadow: inset 0 0 20px rgba(0,0,0,0.22);
   color: #FFF;
+  overflow-wrap: break-word;
+  display: flex;
 }
 
 .data-name {
@@ -330,5 +337,16 @@
   border-style: solid;
   border-color: black;
   height: 100vh;
+  background-color: #FFFAF0;
+}
+
+.check-in-button {
+  padding: 20px;
+  margin: 10px;
+}
+
+.check-in-input {
+  border: none;
+  border-bottom: 2px solid black;
   background-color: #FFFAF0;
 }

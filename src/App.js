@@ -8,7 +8,7 @@ import { HashRouter, Switch,  Route } from 'react-router-dom';
 import { TipCalculatorComponent } from './component/tip-calculator/tip-calculator-component';
 import { PokedexComponent } from './component/pokedex-component/pokedex-component';
 import { TicTacToeComponent } from './component/tic-tac-toe-component/tic-tac-toc-component';
-import { CheckInComponent } from './component/attendance-component/attendance-component';
+import { CheckInComponent } from './component/attendance-list-component/attendance-component';
 
 function App() {
   return (
