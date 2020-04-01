@@ -267,3 +267,44 @@
   height: 100vh;
   background-color: #FFFAF0;
 }
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status  {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: center;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 15vh;
+  margin-right: -1px;
+  padding:  0;
+  text-align: center;
+  width: 15vh;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd=navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
