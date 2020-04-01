@@ -9,6 +9,7 @@ import { TipCalculatorComponent } from './component/tip-calculator/tip-calculato
 import { PokedexComponent } from './component/pokedex-component/pokedex-component';
 import { TicTacToeComponent } from './component/tic-tac-toe-component/tic-tac-toc-component';
 import { CheckInComponent } from './component/attendance-list-component/attendance-component';
+import { HomeComponent } from './component/home-component/home-component';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <NavBarComponent />
       <HashRouter>
         <Switch>
+          <Route path="/home" exact component={HomeComponent} />
           <Route path="/to-do-list" exact component={ToDoComponent} />
           <Route path="/tip-calculator" exact component={TipCalculatorComponent} />
           <Route path="/pokedex" exact component={PokedexComponent}  />

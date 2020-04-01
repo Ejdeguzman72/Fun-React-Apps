@@ -12,7 +12,7 @@ export class NavBarComponent extends React.Component {
         return (
             <HashRouter>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">Fun React Applications</Navbar.Brand>
+                    <Navbar.Brand href="/home">Fun React Applications</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">

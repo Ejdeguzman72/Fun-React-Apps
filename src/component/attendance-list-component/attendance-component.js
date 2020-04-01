@@ -33,17 +33,20 @@ export class CheckInComponent extends React.Component {
         event.preventDefault();
         var today = new Date();
         var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
-        var personFullName = this.state.firstname + ' ' + this.state.lastname;
-        console.log('this is personFullName' + personFullName);
+        var firstname = this.state.firstname;
+        var lastname = this.state.lastname;
+        console.log(firstname + lastname);
+        console.log('this is personFullName');
         this.setState({
             present: true,
-            fullname: personFullName,
+            fullname: '',
             date: currentDate
         });
      
         alert(`${this.state.personFullName} has checked in`);
         console.log("Time: " + this.state.date);
-        console.log("Name: " + this.state.fullname);
+        console.log("First Name: " + this.state.firstname);
+        console.log("Last Name: " + this.state.lastname)
         console.log("Attendance: " + this.state.present);
     }
 
