@@ -78,7 +78,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.15}
-                                checked={this.state.tipPercent == 0.15}
+                                checked={this.state.tipPercent === 0.15}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -91,7 +91,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.20}
-                                checked={this.state.tipPercent == 0.20}
+                                checked={this.state.tipPercent === 0.20}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />
@@ -104,7 +104,7 @@ export class TipCalculatorComponent extends React.Component {
                                 type="radio"
                                 name="react-tips"
                                 value={0.22}
-                                checked={this.state.tipPercent == 0.22}
+                                checked={this.state.tipPercent === 0.22}
                                 className="tip-calculator-radio-button"
                                 onChange={this.handleTipPercentChange}
                                 />

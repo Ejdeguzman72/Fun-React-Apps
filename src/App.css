@@ -118,6 +118,12 @@
   background-color: #FFFAF0;
 }
 
+.tip-calculator-outline {
+  border-style: solid;
+  border-color: black;
+  background-color: #585858;
+}
+
 #tip-calculator-center-row {
   text-align: center;
   padding: 15px;
