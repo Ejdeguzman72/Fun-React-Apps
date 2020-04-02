@@ -64,6 +64,13 @@
   font-family: fantasy;
 }
 
+.homepage-title {
+  font-family: fantasy;
+  text-align: center;
+  margin: 0;
+  padding: 50px;
+}
+
 /* NavBar Features----------------------------------------------------------------------------------------------------------------------- */
 .navbar-link {
   color: white;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Container, Button, Row } from 'react-bootstrap';
+import AttendanceListComponent from './attendance-list-component';
 
 export class CheckInComponent extends React.Component {
     constructor(props) {
@@ -15,7 +16,10 @@ export class CheckInComponent extends React.Component {
     }
 
     handleFirstNameChange = (event) => {
+        var today = new Date();
+        var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
         this.setState({ 
+            date: currentDate,
             firstname: event.target.value,
             present: true
         });
@@ -40,10 +44,12 @@ export class CheckInComponent extends React.Component {
         this.setState({
             present: true,
             fullname: '',
-            date: currentDate
+            date: currentDate,
+            fullname:  firstname + ' '+ lastname,
+            names: [...this.state.names,  this.state.fullname]
         });
      
-        alert(`${this.state.personFullName} has checked in`);
+        alert(`${this.state.fullname} has checked in`);
         console.log("Time: " + this.state.date);
         console.log("First Name: " + this.state.firstname);
         console.log("Last Name: " + this.state.lastname)
@@ -60,13 +66,14 @@ export class CheckInComponent extends React.Component {
                             <h1 className="center-title">Check-In</h1>
                             <label>Enter First Name:</label>
                             <br></br>
-                            <input type="text" className="check-in-input" onChange={(event) => this.handleFirstNameChange(event)}/>
+                            <input value={this.state.firstname} type="text" className="check-in-input" onChange={(event) => this.handleFirstNameChange(event)}/>
                             <br></br>
                             <label>Enter Last Name:</label>
                             <br></br>
-                            <input type="text" className="check-in-input" oNChange={(event) => this.handleLastNameChange(event)} />
+                            <input value={this.state.lastname} type="text" className="check-in-input" onChange={(event) => this.handleLastNameChange(event)} />
                             <br></br>
                             <Button variant="secondary" type="submit" className="check-in-button">Submit</Button>
+                            <AttendanceListComponent  names={this.state.fullName} />
                         </Container>
                     </Form>
                 </div>
