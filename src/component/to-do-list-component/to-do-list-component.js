@@ -42,7 +42,7 @@ export default class ToDoListComponent extends React.Component {
                         <Button variant="secondary" type="submit">Submit</Button>
                         <br></br>
                     </form>   
-                        {/* <ListComponent items={this.state.items} removeItem={this.removeItem}  /> */}
+                        <ListComponent items={this.state.items} removeItem={this.removeItem}  />
                 </Container>
             </div>
         )

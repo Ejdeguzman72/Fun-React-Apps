@@ -9,7 +9,7 @@ export class TicTacToeComponent extends React.Component {
                 <br></br>
                 <Container className="tic-tac-toe-container">
                     <h1 className="center-title">TicTacToe Game</h1>
-                    <Board />
+                    <Game />
                 </Container>
             </div>
         )
@@ -28,18 +28,14 @@ class Board extends React.Component {
     renderSquare(i) {
         return  (
             <Square 
-                // value={this.props.squares[i]}
-                // onClick={() => this.props.onClick(i)} 
+                value={this.props.squares[i]}
+                onClick={() => this.props.onClick(i)} 
             />
         ); 
     }
-
     render() {
-        const status = "Next Player: X";
-        
         return (
             <div>
-                <div className="status">{status}</div>
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
@@ -81,7 +77,7 @@ class Game extends React.Component {
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
-        squares[i] = this.state.xisNext ? "X" : "O";
+        squares[i] = this.state.xIsNext ? "X" : "O";
         this.setState({
             history: history.concat([
                 {
@@ -89,14 +85,14 @@ class Game extends React.Component {
                 }
             ]),
             stepNumber: history.length,
-            xisNext: !this.state.isNext
+            xIsNext: !this.state.xIsNext
         });
     }
 
     jumpTo(step) {
         this.setState({
             stepNumber: step,
-            xisNext: (step % 2) === 0
+            xIsNext: (step % 2) === 0
         });
     }
 
@@ -105,7 +101,7 @@ class Game extends React.Component {
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
 
-        const moves = history.mao((step, move) => {
+        const moves = history.map((step, move) => {
             const desc = move ? 
             'Go to  move #' + move :
             'Go to game start';
@@ -122,7 +118,7 @@ class Game extends React.Component {
         if (winner) {
             status = "Winner: " + winner;
         } else {
-            status = "Next player: " + (this.state.xisNext ? "X" : "O");
+            status = "Next player: " + (this.state.xIsNext ? "X" : "O");
         }
 
         return (
@@ -135,7 +131,7 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <ol>{moves}</ol>
+                    <ol className="tic-tac-toe-ol">{moves}</ol>
                 </div>
             </div>
         );

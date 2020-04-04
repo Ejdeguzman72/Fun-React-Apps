@@ -28,24 +28,22 @@ export class CheckInComponent extends React.Component {
 
     handleLastNameChange =  (event)  => {
         this.setState({
-            lastname: event.target.value
+            lastname: event.target.value,
         });
-        console.log(this.state.lastname);
     }
-
+    
     onSubmit = (event) => {
         event.preventDefault();
-        var today = new Date();
-        var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
         var firstname = this.state.firstname;
         var lastname = this.state.lastname;
-        console.log(firstname + lastname);
+        var today = new Date();
+        var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
         console.log('this is personFullName');
         this.setState({
             present: true,
-            fullname: '',
             date: currentDate,
-            fullname:  firstname + ' '+ lastname,
+            fullname:  firstname + ' ' + lastname,
+            fullname: this.state.fullname,
             names: [...this.state.names,  this.state.fullname]
         });
      
@@ -54,6 +52,7 @@ export class CheckInComponent extends React.Component {
         console.log("First Name: " + this.state.firstname);
         console.log("Last Name: " + this.state.lastname)
         console.log("Attendance: " + this.state.present);
+        console.log("Names Array: " + this.state.names);
     }
 
     render() {
@@ -73,7 +72,7 @@ export class CheckInComponent extends React.Component {
                             <input value={this.state.lastname} type="text" className="check-in-input" onChange={(event) => this.handleLastNameChange(event)} />
                             <br></br>
                             <Button variant="secondary" type="submit" className="check-in-button">Submit</Button>
-                            <AttendanceListComponent  names={this.state.fullName} />
+                            <AttendanceListComponent  names={this.state.names} />
                         </Container>
                     </Form>
                 </div>
