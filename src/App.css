@@ -66,10 +66,15 @@
 
 .homepage-title {
   font-family: fantasy;
+  font-family: 15px;
   text-align: center;
-  margin: 0;
-  padding: 50px;
 }
+
+.homepage-container {
+  text-align: center;
+  float: center;
+}
+
 
 /* NavBar Features----------------------------------------------------------------------------------------------------------------------- */
 .navbar-link {

@@ -43,7 +43,7 @@ export class CheckInComponent extends React.Component {
             present: true,
             date: currentDate,
             fullname:  firstname + ' ' + lastname,
-            fullname: this.state.fullname,
+            // fullname: this.state.fullname,
             names: [...this.state.names,  this.state.fullname]
         });
      
