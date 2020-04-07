@@ -16,12 +16,10 @@ export class CheckInComponent extends React.Component {
     }
 
     handleFirstNameChange = (event) => {
-        var today = new Date();
-        var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
+        // var today = new Date();
+        // var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
         this.setState({ 
-            date: currentDate,
             firstname: event.target.value,
-            present: true
         });
         console.log(this.state.firstname);
     }
@@ -34,25 +32,14 @@ export class CheckInComponent extends React.Component {
     
     onSubmit = (event) => {
         event.preventDefault();
-        var firstname = this.state.firstname;
-        var lastname = this.state.lastname;
         var today = new Date();
         var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
-        console.log('this is personFullName');
         this.setState({
             present: true,
             date: currentDate,
-            fullname:  firstname + ' ' + lastname,
-            // fullname: this.state.fullname,
+            fullname:  this.state.firstname + ' ' + this.state.lastname,
             names: [...this.state.names,  this.state.fullname]
         });
-     
-        alert(`${this.state.fullname} has checked in`);
-        console.log("Time: " + this.state.date);
-        console.log("First Name: " + this.state.firstname);
-        console.log("Last Name: " + this.state.lastname)
-        console.log("Attendance: " + this.state.present);
-        console.log("Names Array: " + this.state.names);
     }
 
     render() {
@@ -72,7 +59,7 @@ export class CheckInComponent extends React.Component {
                             <input value={this.state.lastname} type="text" className="check-in-input" onChange={(event) => this.handleLastNameChange(event)} />
                             <br></br>
                             <Button variant="secondary" type="submit" className="check-in-button">Submit</Button>
-                            <AttendanceListComponent  names={this.state.names} />
+                            <AttendanceListComponent  names={this.state.names} time={this.state.date} />
                         </Container>
                     </Form>
                 </div>

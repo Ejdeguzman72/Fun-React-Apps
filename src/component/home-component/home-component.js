@@ -14,14 +14,14 @@ export class HomeComponent extends React.Component {
     render() {
         return (
             <div id="hero-home-background">
-                
+                <h1 className="homepage-title">Edgar Joseph DeGuzman</h1>
                 <Container className="homepage-container">
                 <Row>
                         <Col md={2}>
 
                         </Col>
                         <Col md={10}>
-                           <h1>Edgar DeGuzman Presents:</h1>
+                           <h1  className="homepage-title">Have Fun With Our:</h1>
                         </Col>
                         <Col md={2}>
                             
@@ -35,7 +35,7 @@ export class HomeComponent extends React.Component {
                         </Col>
                         <Col md={10}>
                             <Bounce>
-                                <Avatar round={true} value={this.state.title} size={350} color={Avatar.getRandomColor('sitebase', ['FFFAF0', 'FFFAF0', 'blue'])}>
+                                <Avatar round={true} value={this.state.title} size={350} color={Avatar.getRandomColor('sitebase', ['FFFAF0', 'FFFAF0', 'blue'])} className="homepage-container">
                                     <h1 id="homepage-title">Fun React Projects</h1>
                                 </Avatar>
                             </Bounce>

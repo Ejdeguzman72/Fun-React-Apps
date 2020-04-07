@@ -73,6 +73,7 @@
 .homepage-container {
   text-align: center;
   float: center;
+  position: absolute;
 }
 
 
