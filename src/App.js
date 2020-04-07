@@ -23,6 +23,7 @@ function App() {
           <Route path="/pokedex" exact component={PokedexComponent}  />
           <Route path="/tic-tac-toe"  exact component={TicTacToeComponent} />
           <Route path="/check-in" exact component={CheckInComponent} />
+          <Route component={HomeComponent} />
         </Switch>
       </HashRouter>
     </div>

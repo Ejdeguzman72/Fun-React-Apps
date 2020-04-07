@@ -76,6 +76,16 @@
   position: absolute;
 }
 
+#hero-overlay {
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  top: 0; 
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+}
+
 
 /* NavBar Features----------------------------------------------------------------------------------------------------------------------- */
 .navbar-link {
@@ -379,6 +389,7 @@
   border-color: black;
   height: 100vh;
   background-color: #FFFAF0;
+  font-size: 40px;
 }
 
 .check-in-button {
