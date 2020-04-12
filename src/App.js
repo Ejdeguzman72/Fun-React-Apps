@@ -10,6 +10,7 @@ import { PokedexComponent } from './component/pokedex-component/pokedex-componen
 import { TicTacToeComponent } from './component/tic-tac-toe-component/tic-tac-toc-component';
 import { CheckInComponent } from './component/attendance-list-component/attendance-component';
 import { HomeComponent } from './component/home-component/home-component';
+import { GroceryListComponent } from './component/grocery-list-component/grocery-list-component';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/pokedex" exact component={PokedexComponent}  />
           <Route path="/tic-tac-toe"  exact component={TicTacToeComponent} />
           <Route path="/check-in" exact component={CheckInComponent} />
+          <Route path="/grocery-list" exact component={GroceryListComponent} />
           <Route component={HomeComponent} />
         </Switch>
       </HashRouter>

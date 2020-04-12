@@ -41,6 +41,11 @@ export class NavBarComponent extends React.Component {
                                     Attendance Sheet
                                 </Link>
                             </Nav.Link>
+                            <Nav.Link>
+                                <Link to="/grocery-list" className="navbar-link">
+                                    Grocery List
+                                </Link>
+                            </Nav.Link>
                             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

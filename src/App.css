@@ -135,6 +135,7 @@
   overflow-wrap: break-word;
 }
 
+
 /* Tip Calculator----------------------------------------------------------------------------------------------------------------------- */
 
 #hero-tip-calculator-background {
@@ -407,4 +408,63 @@
   list-style: none;
   font-family: fantasy;
   text-align: center;
+}
+
+/* Grocery List----------------------------------------------------------------------------------------------------------------------- */
+
+#hero-grocery-list-background {
+  background-image: url('./assets/images.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  z-index: -10;
+  height: 200vh;
+  margin: 0;
+  font-family: fantasy;
+}
+
+.grocery-list-container {
+  text-align: center;
+  margin: auto;
+  border-style: solid;
+  border-color: black;
+  height: 100vh;
+  width: auto;
+  background-color: #FFFAF0;
+  font-size: 30px;
+}
+
+.grocery-list-budget-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: #FFFAF0;
+}
+
+.grocery-list-item-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: #FFFAF0;
+  font-size: 20px;
+}
+
+#grocery-list-center-row {
+  text-align: center;
+  padding: 15px;
+}
+
+#grocery-list-amount-label {
+  font-family: font-fantasy;
+}
+
+
+.grocery-list-item {
+  font-size: 25px;
+  font-family: fantasy;
+  list-style: none;
+  padding: 15px;
+  list-style-position: inside;
+  background-color: #F0F8FF;
+  text-overflow: hidden;
+  overflow-wrap: break-word;
 }
