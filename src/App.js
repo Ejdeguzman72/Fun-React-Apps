@@ -15,7 +15,6 @@ import { GroceryListComponent } from './component/grocery-list-component/grocery
 function App() {
   return (
     <div>
-      <NavBarComponent />
       <HashRouter>
         <Switch>
           <Route path="/home" exact component={HomeComponent} />

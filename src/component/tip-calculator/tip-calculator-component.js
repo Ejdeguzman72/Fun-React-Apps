@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Button, Form } from 'react-bootstrap';
 // import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio} from 'material-ui\core';
+import {NavBarComponent} from '../../component/navbar-component/navbar-component';
+
 
 export class TipCalculatorComponent extends React.Component {
     constructor(props) {
@@ -58,65 +60,68 @@ export class TipCalculatorComponent extends React.Component {
 
     render() {
         return (
-            <div id="hero-tip-calculator-background">
-                <br></br>
-                <Form onSubmit={this.onSubmit}>
-                    <Container className="tip-calculator-container">
-                        <h1 className="center-title">Tip Calculator</h1>
-                        <h3 id="tip-calculator-center-row">Bill Amount:  {this.state.amount}</h3>
-                        <input type="text" onChange={(event) => this.onAmountChange(event)} placeholder="0.00"/>
-                        <h3 id="tip-calculator-center-row">How was the service?</h3>
-                        <select onChange={(event) => this.onServiceChange(event)}>
-                            <option value="Above Satisfactory">Above Satisfactory</option>
-                            <option selected value="Satisfactory">Satisfactory</option>
-                            <option value="Below Satisfactory">Below Satisfactory</option>
-                        </select>
-                        <h3 id="tip-calculator-center-row">Choose Tip Amount:</h3>
-                        <div className="form-check">
-                            <label className="tip-calculator-label">
-                                <input 
-                                type="radio"
-                                name="react-tips"
-                                value={0.15}
-                                checked={this.state.tipPercent === 0.15}
-                                className="tip-calculator-radio-button"
-                                onChange={this.handleTipPercentChange}
-                                />
-                                15%
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <label className="tip-calculator-label">
-                                <input 
-                                type="radio"
-                                name="react-tips"
-                                value={0.20}
-                                checked={this.state.tipPercent === 0.20}
-                                className="tip-calculator-radio-button"
-                                onChange={this.handleTipPercentChange}
-                                />
-                                20%
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <label className="tip-calculator-label">
-                                <input 
-                                type="radio"
-                                name="react-tips"
-                                value={0.22}
-                                checked={this.state.tipPercent === 0.22}
-                                className="tip-calculator-radio-button"
-                                onChange={this.handleTipPercentChange}
-                                />
-                                22%
-                            </label>
-                        </div>
-                        <br></br>
-                        <Button variant="secondary" type="submit">Submit:</Button>
-                        <h3 className="center-title">Tip Amount: {this.state.tipAmount} </h3>
-                        <h3 className="center-title">Total Amount:  {parseInt(this.state.amount) + parseInt(this.state.tipAmount)}</h3>
-                    </Container>
-                </Form>
+            <div>
+                <NavBarComponent />
+                <div id="hero-tip-calculator-background">
+                    <br></br>
+                    <Form onSubmit={this.onSubmit}>
+                        <Container className="tip-calculator-container">
+                            <h1 className="center-title">Tip Calculator</h1>
+                            <h3 id="tip-calculator-center-row">Bill Amount:  {this.state.amount}</h3>
+                            <input type="text" onChange={(event) => this.onAmountChange(event)} placeholder="0.00"/>
+                            <h3 id="tip-calculator-center-row">How was the service?</h3>
+                            <select onChange={(event) => this.onServiceChange(event)}>
+                                <option value="Above Satisfactory">Above Satisfactory</option>
+                                <option selected value="Satisfactory">Satisfactory</option>
+                                <option value="Below Satisfactory">Below Satisfactory</option>
+                            </select>
+                            <h3 id="tip-calculator-center-row">Choose Tip Amount:</h3>
+                            <div className="form-check">
+                                <label className="tip-calculator-label">
+                                    <input 
+                                    type="radio"
+                                    name="react-tips"
+                                    value={0.15}
+                                    checked={this.state.tipPercent === 0.15}
+                                    className="tip-calculator-radio-button"
+                                    onChange={this.handleTipPercentChange}
+                                    />
+                                    15%
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <label className="tip-calculator-label">
+                                    <input 
+                                    type="radio"
+                                    name="react-tips"
+                                    value={0.20}
+                                    checked={this.state.tipPercent === 0.20}
+                                    className="tip-calculator-radio-button"
+                                    onChange={this.handleTipPercentChange}
+                                    />
+                                    20%
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <label className="tip-calculator-label">
+                                    <input 
+                                    type="radio"
+                                    name="react-tips"
+                                    value={0.22}
+                                    checked={this.state.tipPercent === 0.22}
+                                    className="tip-calculator-radio-button"
+                                    onChange={this.handleTipPercentChange}
+                                    />
+                                    22%
+                                </label>
+                            </div>
+                            <br></br>
+                            <Button variant="secondary" type="submit">Submit:</Button>
+                            <h3 className="center-title">Tip Amount: {this.state.tipAmount} </h3>
+                            <h3 className="center-title">Total Amount:  {parseInt(this.state.amount) + parseInt(this.state.tipAmount)}</h3>
+                        </Container>
+                    </Form>
+                </div>
             </div>
         )
     }

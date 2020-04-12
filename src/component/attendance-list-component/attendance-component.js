@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Container, Button, Row } from 'react-bootstrap';
 import AttendanceListComponent from './attendance-list-component';
+import {NavBarComponent} from '../../component/navbar-component/navbar-component';
 
 export class CheckInComponent extends React.Component {
     constructor(props) {
@@ -45,6 +46,7 @@ export class CheckInComponent extends React.Component {
     render() {
         return (
             <div>
+                <NavBarComponent />
                 <div id="hero-check-in-background">
                     <br></br>
                     <Form onSubmit={this.onSubmit}>

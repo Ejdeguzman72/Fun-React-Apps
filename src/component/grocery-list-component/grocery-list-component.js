@@ -2,6 +2,7 @@ import React from 'react';
 import { GroceryAmountInputComponent } from '../tip-calculator/grocery-amount-input-component';
 import { Button, Container, Form } from 'react-bootstrap';
 import ListComponent from '../grocery-list-component/list-component';
+import {NavBarComponent} from '../../component/navbar-component/navbar-component';
 
 export class GroceryListComponent extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ export class GroceryListComponent extends React.Component {
             groceryItems: []
         };
         this.onHandleGroceryItemAmountChange = this.onHandleGroceryItemAmountChange.bind(this);
+        this.onHandleGroceryItemAmountSubmit = this.onHandleGroceryItemAmountSubmit(this);
     }
 
     onHandleAmountChange = (event) => {
@@ -44,6 +46,14 @@ export class GroceryListComponent extends React.Component {
         console.log(`this is the amount for ${this.state.groceryItem}: $${this.state.groceryItemAmount}`);
     }
 
+    onHandleGroceryItemAmountSubmit = (event) => {
+        // event.preventDefault();
+        this.setState({
+            groceryItemAmount: this.state.groceryItemAmount
+        });
+        console.log(`This is the grocery item amount: ${this.state.groceryItemAmount}`);
+    }
+
     onHandleGroceryItemSubmit = (event) => {
         event.preventDefault();
         this.setState({
@@ -62,24 +72,33 @@ export class GroceryListComponent extends React.Component {
 
     render() {
         return (
-            <div id="hero-grocery-list-background">
-                <br></br>
-                    <Container className="grocery-list-container">
-                    <h1 className="center-title">Grocery List</h1>
-                        <Form onSubmit={this.onHandleAmountSubmit}>
-                            {/* <GroceryAmountInputComponent amount={this.state.amount} /> */}
-                            <label>Enter Grocery Budget: </label>
-                            <input type="text" className="grocery-list-budget-input" value={this.state.budgetAmount} onChange={(event) => this.onHandleAmountChange(event)}/>
-                            <Button variant="secondary" type="submit">Submit</Button><br></br>
-                        <label>Budget: {this.state.budgetAmount}</label><br></br>
-                        </Form>
-                        <Form>
-                            <label>Add Grocery Item: </label>
-                            <input type="text" value={this.state.groceryItem} onChange={(event) => this.onHandleGroceryItemChange(event)} className="grocery-list-input" />
-                            <Button variant="secondary" onClick={(event) => this.onHandleGroceryItemSubmit(event)}>Submit</Button>
-                        </Form>
-                        <ListComponent groceryItems={this.state.groceryItems} onHandleGroceryItemAmountChange={this.onHandleGroceryItemAmountChange} />
-                    </Container>
+            <div>
+                <NavBarComponent />
+                <div id="hero-grocery-list-background">
+                    <br></br>
+                        <Container className="grocery-list-container">
+                        <h1 className="center-title">Grocery List</h1>
+                            <Form onSubmit={this.onHandleAmountSubmit}>
+                                {/* <GroceryAmountInputComponent amount={this.state.amount} /> */}
+                                <label>Enter Grocery Budget: </label>
+                                <input type="text" className="grocery-list-budget-input" value={this.state.budgetAmount} onChange={(event) => this.onHandleAmountChange(event)}/>
+                                <Button variant="secondary" type="submit">Submit Budget Amount</Button><br></br>
+                            <label>Budget: {this.state.budgetAmount}</label><br></br>
+                            </Form>
+                            <Form>
+                                <label>Add Grocery Item: </label>
+                                <input type="text" value={this.state.groceryItem} onChange={(event) => this.onHandleGroceryItemChange(event)} className="grocery-list-item-input" />
+                                <Button variant="secondary" onClick={(event) => this.onHandleGroceryItemSubmit(event)}>Add An Item</Button>
+                            </Form>
+                            <ListComponent 
+                                groceryItems={this.state.groceryItems} 
+                                onHandleGroceryItemAmountChange={this.onHandleGroceryItemAmountChange} 
+                                onHandleGroceryItemAmountSubmit={this.onHandleAmountSubmit}
+                                groceryItemAmount={this.state.groceryItemAmount}
+                                />
+                        </Container>
+                </div>
+
             </div>
         )
     }

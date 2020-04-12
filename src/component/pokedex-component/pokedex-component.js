@@ -3,6 +3,8 @@ import {  Container, Form } from 'react-bootstrap';
 import PokeList from './pokelist-component';
 import DetailView from './detailview';
 import Pokemon from '../pokedex-component/pokemon';
+import {NavBarComponent} from '../../component/navbar-component/navbar-component';
+
 
 export class PokedexComponent extends React.Component {
     constructor() {
@@ -29,16 +31,19 @@ export class PokedexComponent extends React.Component {
 
     render() {
         return (
-            <div id="hero-pokedex-background">
-                <Form>
-                    {/* <Container className="pokedex-container"> */}
-                        <h1 className="center-title">Pokedex</h1>
-                        <div className="pokedex">
-                            <PokeList handleOnClick={this.handleOnClick} />
-                            <DetailView pokemon={this.state.pokemon} />
-                        </div>
-                    {/* </Container> */}
-                </Form>
+            <div>
+                <NavBarComponent />
+                <div id="hero-pokedex-background">
+                    <Form>
+                        {/* <Container className="pokedex-container"> */}
+                            <h1 className="center-title">Pokedex</h1>
+                            <div className="pokedex">
+                                <PokeList handleOnClick={this.handleOnClick} />
+                                <DetailView pokemon={this.state.pokemon} />
+                            </div>
+                        {/* </Container> */}
+                    </Form>
+                </div>
             </div>
         )
     }

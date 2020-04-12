@@ -42,6 +42,7 @@
 .center-title {
   text-align: center;
   font-family: fantasy;
+  font-size: 45px;
   /* padding: 15px; */
 }
 
@@ -57,40 +58,52 @@
   background-size: cover;
   top: 0;
   bottom: 0;
-  height: 150vh;
+  height: 100vh;
   width: 100%;
   z-index: -10;
   margin: 0;
   font-family: fantasy;
 }
 
-.homepage-title {
-  font-family: fantasy;
-  font-family: 15px;
-  text-align: center;
-}
-
-.homepage-container {
-  text-align: center;
-  float: center;
-  position: absolute;
-}
-
 #hero-overlay {
-  position: absolute;
   background-color: rgba(0,0,0,0.5);
   top: 0; 
   bottom: 0;
   height: 100%;
   width: 100%;
-  z-index: -5;
+  z-index: -10;
+}
+
+.bounce-square {
+  background-color: #FFFAF0;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 150px;
+}
+
+.button-row {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.start-button {
+  text-align: center;
+  font-family: fantasy;
+  font-size: 45px;
+  color: white;
 }
 
 
 /* NavBar Features----------------------------------------------------------------------------------------------------------------------- */
 .navbar-link {
   color: white;
-  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
 }
 
 /* To Do List Component----------------------------------------------------------------------------------------------------------------------- */
@@ -444,8 +457,16 @@
 .grocery-list-item-input {
   border: none;
   border-bottom: 2px solid black;
+  background-color: #FFFAF0
+}
+
+.grocery-list-item-input {
+  border: none;
+  border-bottom: 2px solid black;
   background-color: #FFFAF0;
   font-size: 20px;
+  margin: 10px 10px 10px 10px;
+  width: 150px;
 }
 
 #grocery-list-center-row {
@@ -455,6 +476,12 @@
 
 #grocery-list-amount-label {
   font-family: font-fantasy;
+  margin: 10px 10px 10px 10px;
+  float: right;
+}
+
+#grocery-item-button {
+  margin: 20px 20px 20px 20px; 
 }
 
 
@@ -467,4 +494,5 @@
   background-color: #F0F8FF;
   text-overflow: hidden;
   overflow-wrap: break-word;
+  width: auto;
 }
