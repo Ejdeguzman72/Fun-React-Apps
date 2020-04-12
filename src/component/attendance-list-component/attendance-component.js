@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Container, Button, Row } from 'react-bootstrap';
 import AttendanceListComponent from './attendance-list-component';
-import {NavBarComponent} from '../../component/navbar-component/navbar-component';
+import {NavBarComponent} from '../navbar-component/navbar-component';
 
 export class CheckInComponent extends React.Component {
     constructor(props) {
@@ -9,27 +9,37 @@ export class CheckInComponent extends React.Component {
         this.state = {
             date: '',
             present: false,
-            firstname: '',
-            lastname: '',
+            // firstname: '',
+            // lastname: '',
             fullname: '',
-            names: [],
+            names: []
         }
     }
 
-    handleFirstNameChange = (event) => {
-        // var today = new Date();
-        // var currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes();
-        this.setState({ 
-            firstname: event.target.value,
+    handleNameChange = (event) => {
+        this.setState({
+            fullname: event.target.value
         });
-        console.log(this.state.firstname);
+        console.log(this.state.fullname);
     }
 
-    handleLastNameChange =  (event)  => {
-        this.setState({
-            lastname: event.target.value,
-        });
-    }
+    // handleFirstNameChange = (event) => {
+    //     this.setState({ 
+    //         firstname: event.target.value,
+    //     });
+    //     console.log(this.state.firstname);
+    // }
+
+    // handleLastNameChange =  (event)  => {
+    //     this.setState({
+    //         lastname: event.target.value,
+    //         fullname: (this.state.firstname + ' ' + this.state.lastname)
+    //     });
+
+    //     // console.log(this.state.firstname + "this is firstname");
+    //     // console.log(this.state.lastname + "this is lastname");
+    //     // console.log(this.state.fullname + "handleLastNameChange");
+    // }
     
     onSubmit = (event) => {
         event.preventDefault();
@@ -38,7 +48,7 @@ export class CheckInComponent extends React.Component {
         this.setState({
             present: true,
             date: currentDate,
-            fullname:  this.state.firstname + ' ' + this.state.lastname,
+            fullname: this.state.fullname,
             names: [...this.state.names,  this.state.fullname]
         });
     }
@@ -52,16 +62,16 @@ export class CheckInComponent extends React.Component {
                     <Form onSubmit={this.onSubmit}>
                         <Container className="check-in-container">
                             <h1 className="center-title">Check-In</h1>
-                            <label>Enter First Name:</label>
+                            <label>Enter Full Name:</label>
                             <br></br>
-                            <input value={this.state.firstname} type="text" className="check-in-input" onChange={(event) => this.handleFirstNameChange(event)}/>
+                            <input value={this.state.fullname} type="text" className="check-in-input" onChange={(event) => this.handleNameChange(event)}/>
                             <br></br>
-                            <label>Enter Last Name:</label>
+                            {/* <label>Enter Last Name:</label> */}
                             <br></br>
-                            <input value={this.state.lastname} type="text" className="check-in-input" onChange={(event) => this.handleLastNameChange(event)} />
+                            {/* <input value={this.state.lastname} type="text" className="check-in-input" onChange={(event) => this.handleLastNameChange(event)} /> */}
                             <br></br>
                             <Button variant="secondary" type="submit" className="check-in-button">Submit</Button>
-                            <AttendanceListComponent  names={this.state.names} time={this.state.date} />
+                            <AttendanceListComponent  names={this.state.names} date={this.state.date} />
                         </Container>
                     </Form>
                 </div>

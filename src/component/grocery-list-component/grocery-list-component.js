@@ -1,5 +1,4 @@
 import React from 'react';
-import { GroceryAmountInputComponent } from '../tip-calculator/grocery-amount-input-component';
 import { Button, Container, Form } from 'react-bootstrap';
 import ListComponent from '../grocery-list-component/list-component';
 import {NavBarComponent} from '../../component/navbar-component/navbar-component';
@@ -14,7 +13,7 @@ export class GroceryListComponent extends React.Component {
             groceryItems: []
         };
         this.onHandleGroceryItemAmountChange = this.onHandleGroceryItemAmountChange.bind(this);
-        this.onHandleGroceryItemAmountSubmit = this.onHandleGroceryItemAmountSubmit(this);
+        this.onHandleGroceryItemAmountSubmit = this.onHandleGroceryItemAmountSubmit.bind(this);
     }
 
     onHandleAmountChange = (event) => {

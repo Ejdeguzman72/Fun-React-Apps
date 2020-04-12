@@ -14,6 +14,7 @@ export class TipCalculatorComponent extends React.Component {
             service: 'Satisfactory',
             total: 0.00
         }
+        
 
         // const serviceLevel = [
         //     { label: "Below Satisfactory", value: "Below Satisfactory"},
